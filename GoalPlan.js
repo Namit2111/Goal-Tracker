@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, ActivityIndicator } from 'react-native';
 // import genAI from 'some-genai-library'; // Replace with the actual import from the GenAI library
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const genAI = new GoogleGenerativeAI("AIzaSyCazJEmpYATyI34DZUKsHfwIoFq94yGALI");
+const genAI = new GoogleGenerativeAI(process.env.api_key);
 
-// GoogleGenerativeAI.configure(api_key="AIzaSyCazJEmpYATyI34DZUKsHfwIoFq94yGALI")
 function GoalPlan({ route }) {
   const { goal, days } = route.params;
   const numDays = parseInt(days, 10);
